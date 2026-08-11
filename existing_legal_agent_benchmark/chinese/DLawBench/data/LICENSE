@@ -1,0 +1,38 @@
+DLawBench Dataset License
+=========================
+
+The DLawBench benchmark dataset — the contents of the `data/` and
+`metadata/` directories of this repository, including the case records in
+`data/case_backgrounds/` and the accompanying index, manifest, and summary
+files — is licensed under the Creative Commons Attribution 4.0 International
+License (CC BY 4.0).
+
+You are free to:
+
+  * Share — copy and redistribute the material in any medium or format.
+  * Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following terms:
+
+  * Attribution — You must give appropriate credit to the DLawBench authors,
+    provide a link to this license, and indicate if changes were made. You
+    may do so in any reasonable manner, but not in any way that suggests the
+    licensor endorses you or your use.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license
+permits.
+
+The full legal code of the license is available at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+Provenance note: the benchmark cases are derived from publicly available
+Chinese and U.S. court decisions. Case content has been rewritten and
+anonymized by legal experts for benchmarking purposes. The dataset is
+intended for research and evaluation only and must not be used as legal
+advice or to identify any individual.
+
+The source code of DLawBench is licensed separately under the MIT License;
+see the `LICENSE` file at the repository root.

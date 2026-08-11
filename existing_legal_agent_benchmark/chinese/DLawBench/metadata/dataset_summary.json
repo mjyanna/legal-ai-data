@@ -1,0 +1,32 @@
+{
+  "dataset_name": "DLawBench",
+  "statistics": {
+    "CN": {
+      "cases": 30,
+      "case_style_cells": 120,
+      "fact_pairs": 319,
+      "disputed_fact_pairs": 226,
+      "undisputed_fact_pairs": 93,
+      "inquiry_rubrics": 202,
+      "issue_rubrics": 182
+    },
+    "US": {
+      "cases": 30,
+      "case_style_cells": 120,
+      "fact_pairs": 439,
+      "disputed_fact_pairs": 338,
+      "undisputed_fact_pairs": 101,
+      "inquiry_rubrics": 397,
+      "issue_rubrics": 365
+    },
+    "TOTAL": {
+      "cases": 60,
+      "case_style_cells": 240,
+      "fact_pairs": 758,
+      "disputed_fact_pairs": 564,
+      "undisputed_fact_pairs": 194,
+      "inquiry_rubrics": 599,
+      "issue_rubrics": 547
+    }
+  }
+}

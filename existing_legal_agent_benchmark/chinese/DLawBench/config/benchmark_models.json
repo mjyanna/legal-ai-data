@@ -1,0 +1,32 @@
+{
+  "_schema": {
+    "version": 2,
+    "description": "Models to benchmark as lawyer agents. Infrastructure models (client, judges) listed separately."
+  },
+
+  "infrastructure": {
+    "client_model": "claude-sonnet-4-6",
+    "judge_panel": [
+      "gpt-5.1-2025-11-13",
+      "claude-opus-4-6-20260205",
+      "gemini-3.1-pro-preview"
+    ],
+    "_recusal_note": "When evaluating a lawyer model, exclude the judge from the same provider. For providers not in the panel (xAI, Moonshot, Alibaba, DeepSeek), all 3 judges score and take median.",
+    "aggregation": "median for 3 judges, mean for 2 judges (after recusal)"
+  },
+
+  "all_lawyer_models": [
+    "gpt-5.2-2025-12-11",
+    "gpt-5.5",
+    "gpt-5.4-2026-03-05",
+    "claude-opus-4-6",
+    "claude-sonnet-4-6",
+    "gemini-3.1-pro-preview",
+    "grok-4",
+    "kimi-k2.5",
+    "qwen3-max-2025-09-23",
+    "qwen3.5-plus-2026-02-15",
+    "deepseek-r1",
+    "deepseek-v3.2-thinking"
+  ]
+}

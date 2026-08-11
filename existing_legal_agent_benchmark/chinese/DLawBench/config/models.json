@@ -1,0 +1,6 @@
+{
+  "client_model":           "claude-sonnet-4-6-20260217",
+  "lawyer_model":           "gpt-5.2-2025-12-11",
+  "eval_model":             "gpt-5-2025-08-07",
+  "_eval_note":             "eval_model is the default single-judge fallback; Panel of Judges config is in benchmark_models.json"
+}

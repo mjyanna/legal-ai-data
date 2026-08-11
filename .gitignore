@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+**/__pycache__/
+*.pyc
+existing_legal_agent_benchmark/chinese/Legal-world/dataset/Full_version_raw.json
