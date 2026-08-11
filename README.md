@@ -2,6 +2,28 @@
 
 本仓库整理已有 legal agent benchmark 及相关 legal benchmark。
 
+## Table of Contents
+
+- [Legal Agent Benchmarks](#legal-agent-benchmarks-1)
+  - [LegalAgentBench](#legalagentbench)
+  - [J1-Bench / J1-Eval](#j1-bench--j1-eval)
+  - [MASER / MILE](#maser--mile)
+  - [LEGALWORLD / LongJud-Bench](#legalworld--longjud-bench)
+  - [DLawBench](#dlawbench)
+  - [SimuCourt / AgentsCourt](#simucourt--agentscourt)
+  - [Harvey LAB](#harvey-lab)
+- [Related Legal Benchmarks / References](#related-legal-benchmarks--references)
+  - [PLawBench](#plawbench)
+  - [LegalBench](#legalbench)
+  - [LawBench](#lawbench)
+  - [LexEval](#lexeval)
+  - [LAiW](#laiw)
+  - [Legal-Skills-Chinese](#legal-skills-chinese)
+  - [UCL-Bench](#ucl-bench)
+  - [JuDGE](#judge)
+  - [LegalBench-RAG](#legalbench-rag)
+- [General Observations](#general-observations)
+
 收录口径：
 
 - **Legal Agent Benchmarks**：明确评测法律智能体、交互式法律环境、工具调用、多角色协作或长流程法律任务。
@@ -379,6 +401,7 @@
 | LawBench       | China / Chinese   | *LawBench: Benchmarking Legal Knowledge of Large Language Models*                                      | [GitHub](https://github.com/open-compass/LawBench)                                                           | 20 tasks; 10,000 examples in zero-shot and 10,000 in one-shot            | 法律知识记忆；法律理解；法律推理；法律应用                 | 民事/刑事/行政/综合     |
 | LexEval        | China / Chinese   | *LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models*                | [GitHub](https://github.com/CSHaitao/LexEval)                                                                | 14,150 questions; 23 tasks                                               | 法律记忆；法律理解；逻辑推理；法律辨别；法律生成；法律伦理 | 民事/刑事/行政/商事综合 |
 | LAiW           | China / Chinese   | *LAiW: A Chinese Legal Large Language Models Benchmark*                                                | [GitHub](https://github.com/Dai-shen/LAiW)                                                                   | 11,605 examples; 14 tasks                                                | 基础信息检索；法律原则推理；法律高级应用                   | 民事/刑事/行政综合      |
+| Legal-Skills-Chinese | China / Chinese | -                                                                                                      | [GitHub](https://github.com/THUYRan/Legal-Skills-Chinese)                                                    | 38 skills; 7 categories                                                  | 法律检索；事实要素处理；法律解释；法律推理；论证组织；风险评估；文书与事务管理 | 中国大陆成文法；综合 |
 | UCL-Bench      | China / Chinese   | *UCL-Bench: A Chinese User-Centric Legal Benchmark for Large Language Models*                          | [ACL](https://aclanthology.org/2025.findings-naacl.444/), [GitHub](https://github.com/wittenberg11/UCL-bench) | 230 public examples; 23 tasks                                            | 用户模拟；法律咨询；罪名/法条预测；文书与案件任务          | 民事/刑事/行政综合      |
 | JuDGE          | China / Chinese   | *JuDGE: Benchmarking Judgment Document Generation for Chinese Legal System*                            | [GitHub](https://github.com/oneal2000/JuDGE), [Paper](https://arxiv.org/abs/2503.14258)                       | 2,505 cases; 452 law articles; 2,505 case-corpus records                 | 裁判文书生成；法律说理；裁判结果预测；类案/法条检索        | 刑事为主                |
 | LegalBench-RAG | Foreign / English | *LegalBench-RAG: A Benchmark for Retrieval-Augmented Generation in the Legal Domain*                   | [GitHub](https://github.com/zeroentropy-ai/legalbenchrag), [Paper](https://arxiv.org/abs/2408.10343)          | 6,889 tests; 714 corpus text files; 4 benchmark datasets                 | 检索问答；证据片段定位；基于引用的答案生成                 | 民商事/合同/隐私合规    |
@@ -568,6 +591,65 @@
 | 法律高级应用 | 法律咨询     | CrimeKgAssitant | `legal_lc`  |        916 | 文本生成     |
 
 - **主要贡献**：把中文法律能力拆成基础信息检索、法律原则推理和法律高级应用三个层级，覆盖法条推送、要素识别、类案匹配、罪名/刑期预测、裁判预测、说理生成和法律咨询。
+
+### Legal-Skills-Chinese
+
+- **数据结构**：
+
+```json
+{
+  "library": "Legal-Skills-Chinese",
+  "jurisdiction": "中国大陆成文法体系",
+  "num_skills": 38,
+  "taxonomy": [
+    {
+      "category": "01 · 信息检索",
+      "count": 5,
+      "skills": ["case-retrieval", "legal-article-retrieval", "other-legal-retrieval", "legal-norm-validity-check", "legal-concept-comprehension"]
+    },
+    {
+      "category": "02 · 事实与要素处理",
+      "count": 4,
+      "skills": ["legal-element-extraction", "structured-element-extraction", "dispute-issue-identification", "evidence-evaluation"]
+    },
+    {
+      "category": "03 · 法律解释",
+      "count": 4,
+      "skills": ["legal-interpretation-argument", "systematic-interpretation", "teleological-interpretation", "normative-meaning-argumentation"]
+    },
+    {
+      "category": "04 · 法律推理",
+      "count": 7,
+      "skills": ["deductive-reasoning", "inductive-reasoning", "analogical-reasoning", "legal-abductive-reasoning", "counterfactual-reasoning", "formal-legal-consequence", "conflict-resolution"]
+    },
+    {
+      "category": "05 · 论证组织与评估",
+      "count": 4,
+      "skills": ["argument-chain-construction", "argument-strength-evaluation", "evidence-argument-chain", "strategic-risk-prioritization"]
+    },
+    {
+      "category": "06 · 风险评估与价值判断",
+      "count": 6,
+      "skills": ["dispute-and-performance-risk", "internal-compliance-risk-identification", "legal-risk-assessment", "judicial-value-judgment", "administrative-value-judgment", "legal-judgment-prediction"]
+    },
+    {
+      "category": "07 · 文书与事务管理",
+      "count": 8,
+      "skills": ["legal-document-formatting", "judgment-document-generation", "legal-document-summarization", "multi-document-summarization", "legal-terminology", "case-lifecycle-planning", "trial-scheduling-and-deadline-monitoring", "billing-and-litigation-budget"]
+    }
+  ],
+  "skill_file_example": {
+    "path": "skills/legal-article-retrieval/SKILL.md",
+    "front_matter": {
+      "name": "legal-article-retrieval",
+      "description": "生成标准化法律检索报告，适用于案例检索、法条检索、类案分析等法律研究场景。"
+    },
+    "sections": ["检索流程总图", "检索准备与信息确认", "检索工具配置与数据库选择", "检索思维与方法论框架", "检索执行方法与技术", "检索成果呈现与报告撰写"]
+  }
+}
+```
+
+- **主要贡献**：提供一套面向中国大陆法律场景的 Agent Skills taxonomy，把检索、事实处理、解释、推理、论证、风险评估和文书管理拆成可复用的技能模块。它不是 examples 型评测集，但可以为中文 legal agent benchmark 的任务分类、工具流程、过程约束和输出格式设计提供参考。
 
 ### UCL-Bench
 
