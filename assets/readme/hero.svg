@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title description">
+  <title id="title">Legal AI Data</title>
+  <desc id="description">An open-source collection of legal AI training data, evaluation datasets and benchmarks. A stylized legal document and connected data records illustrate the resource index.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#080f20"/>
+      <stop offset="1" stop-color="#10283b"/>
+    </linearGradient>
+    <radialGradient id="atmosphere" cx="78%" cy="35%" r="60%">
+      <stop stop-color="#146378" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#0c172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#8eaaff"/>
+      <stop offset=".55" stop-color="#67d9ef"/>
+      <stop offset="1" stop-color="#8ce3c7"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#203c51"/>
+      <stop offset="1" stop-color="#101e35"/>
+    </linearGradient>
+    <clipPath id="canvas"><rect width="1200" height="400" rx="20"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#canvas)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <rect width="1200" height="400" fill="url(#background)"/>
+    <rect width="1200" height="400" fill="url(#atmosphere)"/>
+
+    <!-- The fine orbit follows the document-to-index motif. -->
+    <g fill="none" stroke="#42637b" stroke-width="1" opacity=".32">
+      <ellipse cx="901" cy="224" rx="238" ry="151" transform="rotate(-22 901 224)"/>
+      <ellipse cx="901" cy="224" rx="294" ry="185" transform="rotate(-22 901 224)"/>
+      <path d="M641 70h38m-19-19v38M1126 352h24m-12-12v24"/>
+    </g>
+    <path d="M60 49h34" stroke="#76dbe8" stroke-width="3"/>
+    <text x="108" y="56" font-size="18" letter-spacing="3" fill="#a7bcd0">OPEN LEGAL AI RESOURCES</text>
+
+    <g id="identity">
+      <text x="56" y="163" font-size="84" font-weight="700" letter-spacing="-4" fill="#f3f7fc">Legal AI</text>
+      <text x="54" y="272" font-size="116" font-weight="750" letter-spacing="-5" fill="url(#accent)">Data</text>
+      <text x="60" y="324" font-size="24" fill="#c1d1e0">Training data. Evaluation sets.</text>
+      <text x="60" y="359" font-size="24" fill="#c1d1e0">Open-source benchmarks.</text>
+    </g>
+
+    <g id="resource-index">
+      <!-- Connected records represent a curated index, not a processing pipeline. -->
+      <g fill="none" stroke-linejoin="round">
+        <path d="M720 151h-43v117h53M994 205h55v-83h44M994 285h35v51h63" stroke="#69bacc" stroke-opacity=".12" stroke-width="9"/>
+        <path d="M720 151h-43v117h53M994 205h55v-83h44M994 285h35v51h63" stroke="#64b9cf" stroke-width="1.5"/>
+        <path d="M917 74v-27h116M894 351v33h148" stroke="#758fc4" stroke-width="1.5" stroke-dasharray="4 6"/>
+      </g>
+      <g fill="#0e2134" stroke="#6fcbd4" stroke-width="1.5">
+        <circle cx="677" cy="210" r="5"/>
+        <circle cx="1049" cy="165" r="5"/>
+        <circle cx="1029" cy="310" r="5"/>
+      </g>
+      <g transform="translate(741 86) rotate(8 120 135)">
+        <rect width="252" height="268" rx="12" fill="#101f35" stroke="#3c576d"/>
+        <path d="M25 33h104M25 50h162" stroke="#52748e" stroke-width="3"/>
+      </g>
+      <g transform="translate(731 84) rotate(-7 120 135)">
+        <rect width="252" height="268" rx="12" fill="#112b40" stroke="#477991"/>
+        <path d="M25 33h104M25 50h162" stroke="#5a879e" stroke-width="3"/>
+      </g>
+      <g id="legal-document" transform="translate(738 78)">
+        <path d="M12 0h190l50 50v213a12 12 0 0 1-12 12H12a12 12 0 0 1-12-12V12A12 12 0 0 1 12 0Z" fill="url(#paper)" stroke="#8db8ce" stroke-width="1.5"/>
+        <path d="M202 0v39a11 11 0 0 0 11 11h39" fill="#254359" stroke="#8db8ce" stroke-width="1.5"/>
+        <text x="26" y="37" font-size="15" letter-spacing="2" fill="#94b4ca">RESOURCE INDEX</text>
+        <!-- Scales and a document outline place the visual in the legal domain. -->
+        <g transform="translate(126 113)" fill="none" stroke="#9ee8ed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M0-34v81M-54-14H54M-23 47h46M-42-14l-18 37h36l-18-37ZM42-14l-18 37h36L42-14Z"/>
+          <path d="M-60 23q18 23 36 0M24 23q18 23 36 0" fill="#76dbe8" fill-opacity=".13"/>
+          <circle cy="-34" r="5" fill="#9ee8ed" stroke="none"/>
+        </g>
+        <path d="M27 192h139M27 208h196M27 224h117" stroke="#7394ac" stroke-width="3" stroke-linecap="round"/>
+        <path d="M27 249h54" stroke="#83dece" stroke-width="4" stroke-linecap="round"/>
+        <text x="225" y="254" text-anchor="end" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="20" fill="#80d8e5">{ }</text>
+      </g>
+      <g id="record-nodes">
+        <g transform="translate(1054 84)">
+          <rect width="82" height="65" rx="9" fill="#122b40" stroke="#59859e"/>
+          <path d="M18 21h46M18 33h32M18 45h40" stroke="#8fc4d9" stroke-width="2"/>
+        </g>
+        <g transform="translate(1067 303)">
+          <rect width="70" height="65" rx="9" fill="#16283e" stroke="#6d89b0"/>
+          <path d="m20 23-8 10 8 10m30-20 8 10-8 10m-12-25-6 30" fill="none" stroke="#9ab6ef" stroke-width="2"/>
+        </g>
+        <g transform="translate(634 251)">
+          <rect width="66" height="57" rx="8" fill="#102a3a" stroke="#5c9b9f"/>
+          <path d="M16 18h34M16 29h34M16 40h22" stroke="#8cdbcf" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+
+  </g>
+</svg>
