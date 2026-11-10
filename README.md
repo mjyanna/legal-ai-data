@@ -1,6 +1,8 @@
-# Legal Agent Benchmarks
+<h1 align="center">Legal AI Data</h1>
 
-本仓库按三类整理开源 Legal AI 项目：法律智能体评测、相关法律评测与研究、法律资源与技能。
+开源法律 AI 数据集与评测基准的整理，包括每个资源的数据结构、任务类型、评价方式和原始链接，另附相关法律资源与工具。
+
+本项目持续更新。如果你正在开始一项研究、想复现某个工作，或只是想看看这个领域有哪些数据，希望这里能帮你省些时间。欢迎提 Issue 补充资源。
 
 ## Table of Contents
 
@@ -46,15 +48,92 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 
 ## Legal Agent Benchmarks
 
-| Benchmark                  | Region                           | Paper title                                                                                                             | Links                                                                                                                                       | 数据规模（数据量；任务类型数）                                            | 任务类型                                                                                      | 法律领域                                                  | License |
-| -------------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --- |
-| LegalAgentBench            | China / Chinese                  | *LegalAgentBench: Evaluating LLM Agents in Legal Domain*                                                              | [GitHub](https://github.com/CSHaitao/LegalAgentBench), [ACL](https://aclanthology.org/2025.acl-long.116/)                                     | 300条具体数据；6 类任务形态（1-hop 至 5-hop 推理、法律写作）              | 法律信息检索、工具调用、多跳法律推理、法律问答、法律写作                                      | 民商事/企业法律、执行、行政处罚等；非刑事为主             | [MIT（README 声明）](https://github.com/CSHaitao/LegalAgentBench/blob/HEAD/README.md) |
-| J1-Bench / J1-Eval         | China / Chinese                  | *Ready Jurist One: Benchmarking Language Agents for Legal Intelligence in Dynamic Environments*                       | [Project](https://j1bench.github.io/), [GitHub](https://github.com/FudanDISC/J1Bench), [Paper](https://arxiv.org/abs/2507.04037)               | 508 个 J1-Eval 样本；6 类任务                                             | 法律知识问答、法律咨询、起诉状生成、答辩状生成、民事庭审交互、刑事庭审交互                    | 民事、刑事                                                | - |
-| MASER / MILE               | China / Chinese                  | *Multi-Agent Simulator Drives Language Models for Legal Intensive Interaction*                                        | [GitHub](https://github.com/FudanDISC/MASER), [Paper](https://aclanthology.org/2025.findings-naacl.365/)                                      | 693 个 MILE 评价样本；1 类核心任务                                        | 多轮法律咨询、客户事实询问、事实澄清、起诉状生成、诉讼请求/事实理由/证据整理                  | 民事为主                                                  | - |
-| LEGALWORLD / LongJud-Bench | China / Chinese                  | *LEGALWORLD: A Life-Cycle Interactive Environment for Legal Agents*                                                   | [Project](https://chidaic.github.io/Legal-world/), [GitHub](https://github.com/chidaic/Legal-world), [Paper](https://arxiv.org/abs/2606.18728) | 75,309 对一审/二审案件；7 个场景/任务模块                                 | 法律咨询、文书起草、一审庭审、上诉判断、上诉文书起草、二审庭审                                | 民事诉讼                                                  | - |
-| DLawBench                  | China + U.S. / Chinese + English | *DLawBench: bilingual multi-turn legal consultation benchmark*                                                        | [GitHub](https://github.com/SKYLENAGE-AI/DLawBench)                                                                                          | 461 个报告案件；1 类核心任务、4 种 client persona；本地公开子集 60 个案件 | 多轮法律咨询、追问与事实调查、争议事实澄清、法律问题识别、法律 memo 生成                      | 民事、商事、刑事、行政等多领域                            | 代码：[MIT](https://github.com/SKYLENAGE-AI/DLawBench/blob/HEAD/LICENSE)；数据：[CC BY 4.0](https://github.com/SKYLENAGE-AI/DLawBench/blob/HEAD/data/LICENSE) |
-| SimuCourt / AgentsCourt    | China / Chinese                  | *AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation* | [Paper](https://arxiv.org/abs/2403.02959)                                                                                                    | 本地 419 份裁判文书（一审 239、二审 180）；1 类核心任务                   | 庭审辩论模拟、事实认定、法律知识运用、司法决策、罪名/案由预测、刑期和罚金预测                 | 民事、刑事、行政司法裁判                                  | - |
-| Harvey LAB                 | Foreign / English                | *Legal Agent Benchmark (LAB): An open-source benchmark for evaluating agents on real legal work*                      | [GitHub](https://github.com/harveyai/harvey-labs), [Announcement](https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark)       | 1,700+ 个任务；25 个业务领域目录                                          | 合同审查、条款提取、尽职调查、法律研究、备忘录生成、文件比较、交易文书起草、诉讼/监管任务处理 | 商事、交易、诉讼、监管、税务、知识产权等；含白领犯罪/调查 | [MIT](https://github.com/harveyai/harvey-labs/blob/HEAD/LICENSE) |
+<table width="1680">
+  <thead>
+    <tr>
+      <th width="180" align="left">Benchmark</th>
+      <th width="130" align="left">Region</th>
+      <th width="260" align="left">Paper title</th>
+      <th width="120" align="left">Links</th>
+      <th width="230" align="left">数据规模<br>（数据量；任务类型数）</th>
+      <th width="300" align="left">任务类型</th>
+      <th width="200" align="left">法律领域</th>
+      <th width="160" align="left">License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <td>LegalAgentBench</td>
+      <td>China /<br> Chinese</td>
+      <td><em>LegalAgentBench: Evaluating LLM Agents in Legal Domain</em></td>
+      <td><a href="https://github.com/CSHaitao/LegalAgentBench">GitHub</a>,<br> <a href="https://aclanthology.org/2025.acl-long.116/">ACL</a></td>
+      <td>300条具体数据；<br>6 类任务形态（1-hop 至 5-hop 推理、法律写作）</td>
+      <td>法律信息检索、<br>工具调用、<br>多跳法律推理、<br>法律问答、<br>法律写作</td>
+      <td>民商事/企业法律、执行、行政处罚等；<br>非刑事为主</td>
+      <td><a href="https://github.com/CSHaitao/LegalAgentBench/blob/HEAD/README.md">MIT（README 声明）</a></td>
+    </tr>
+    <tr valign="top">
+      <td>J1-Bench / J1-Eval</td>
+      <td>China /<br> Chinese</td>
+      <td><em>Ready Jurist One: Benchmarking Language Agents for Legal Intelligence in Dynamic Environments</em></td>
+      <td><a href="https://j1bench.github.io/">Project</a>,<br> <a href="https://github.com/FudanDISC/J1Bench">GitHub</a>,<br> <a href="https://arxiv.org/abs/2507.04037">Paper</a></td>
+      <td>508 个 J1-Eval 样本；<br>6 类任务</td>
+      <td>法律知识问答、<br>法律咨询、<br>起诉状生成、<br>答辩状生成、<br>民事庭审交互、<br>刑事庭审交互</td>
+      <td>民事、刑事</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>MASER / MILE</td>
+      <td>China /<br> Chinese</td>
+      <td><em>Multi-Agent Simulator Drives Language Models for Legal Intensive Interaction</em></td>
+      <td><a href="https://github.com/FudanDISC/MASER">GitHub</a>,<br> <a href="https://aclanthology.org/2025.findings-naacl.365/">Paper</a></td>
+      <td>693 个 MILE 评价样本；<br>1 类核心任务</td>
+      <td>多轮法律咨询、<br>客户事实询问、<br>事实澄清、<br>起诉状生成、<br>诉讼请求/事实理由/证据整理</td>
+      <td>民事为主</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>LEGALWORLD / LongJud-Bench</td>
+      <td>China /<br> Chinese</td>
+      <td><em>LEGALWORLD: A Life-Cycle Interactive Environment for Legal Agents</em></td>
+      <td><a href="https://chidaic.github.io/Legal-world/">Project</a>,<br> <a href="https://github.com/chidaic/Legal-world">GitHub</a>,<br> <a href="https://arxiv.org/abs/2606.18728">Paper</a></td>
+      <td>75,309 对一审/二审案件；<br>7 个场景/任务模块</td>
+      <td>法律咨询、<br>文书起草、<br>一审庭审、<br>上诉判断、<br>上诉文书起草、<br>二审庭审</td>
+      <td>民事诉讼</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>DLawBench</td>
+      <td>China + U.S. /<br> Chinese + English</td>
+      <td><em>DLawBench: bilingual multi-turn legal consultation benchmark</em></td>
+      <td><a href="https://github.com/SKYLENAGE-AI/DLawBench">GitHub</a></td>
+      <td>461 个报告案件；<br>1 类核心任务、4 种 client persona；<br>本地公开子集 60 个案件</td>
+      <td>多轮法律咨询、<br>追问与事实调查、<br>争议事实澄清、<br>法律问题识别、<br>法律 memo 生成</td>
+      <td>民事、商事、刑事、行政等多领域</td>
+      <td>代码：<a href="https://github.com/SKYLENAGE-AI/DLawBench/blob/HEAD/LICENSE">MIT</a>；<br>数据：<a href="https://github.com/SKYLENAGE-AI/DLawBench/blob/HEAD/data/LICENSE">CC BY 4.0</a></td>
+    </tr>
+    <tr valign="top">
+      <td>SimuCourt / AgentsCourt</td>
+      <td>China /<br> Chinese</td>
+      <td><em>AgentsCourt: Building Judicial Decision-Making Agents with Court Debate Simulation and Legal Knowledge Augmentation</em></td>
+      <td><a href="https://arxiv.org/abs/2403.02959">Paper</a></td>
+      <td>本地 419 份裁判文书（一审 239、二审 180）；<br>1 类核心任务</td>
+      <td>庭审辩论模拟、<br>事实认定、<br>法律知识运用、<br>司法决策、<br>罪名/案由预测、<br>刑期和罚金预测</td>
+      <td>民事、刑事、行政司法裁判</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>Harvey LAB</td>
+      <td>Foreign /<br> English</td>
+      <td><em>Legal Agent Benchmark (LAB): An open-source benchmark for evaluating agents on real legal work</em></td>
+      <td><a href="https://github.com/harveyai/harvey-labs">GitHub</a>,<br> <a href="https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark">Announcement</a></td>
+      <td>1,700+ 个任务；<br>25 个业务领域目录</td>
+      <td>合同审查、<br>条款提取、<br>尽职调查、<br>法律研究、<br>备忘录生成、<br>文件比较、<br>交易文书起草、<br>诉讼/监管任务处理</td>
+      <td>商事、交易、诉讼、监管、税务、知识产权等；<br>含白领犯罪/调查</td>
+      <td><a href="https://github.com/harveyai/harvey-labs/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### LegalAgentBench
 
@@ -409,27 +488,202 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 
 ## Reference
 
-| Project / Dataset | Region            | Paper title                                                                                              | Links                                                                                                       | Data size（examples; tasks/files）                                       | 任务类型                                                   | 法律领域                | License |
-| -------------- | ----------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------------------- | --- |
-| PLawBench      | China / Chinese   | *PLawBench: A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice*                 | [GitHub](https://github.com/SKYLENAGE-AI/PLawbench)                                                          | 280 examples: 250 case analysis, 18 consultation, 6 complaint, 6 defense | 案例分析；法律咨询；起诉状与答辩状起草                     | 民事/家事/劳动/商事为主 | - |
-| LegalBench     | U.S. / English    | *LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models* | [GitHub](https://github.com/HazyResearch/legalbench)                                                         | 11,075 parsed examples; 162 tasks                                        | 合同理解；法律推理；判例、隐私政策与法律规则任务           | 民商事/合规/综合        | [按各子数据集许可](https://github.com/HazyResearch/legalbench/tree/HEAD/tasks) |
-| LawBench       | China / Chinese   | *LawBench: Benchmarking Legal Knowledge of Large Language Models*                                      | [GitHub](https://github.com/open-compass/LawBench)                                                           | 20 tasks; 10,000 examples in zero-shot and 10,000 in one-shot            | 法律知识记忆；法律理解；法律推理；法律应用                 | 民事/刑事/行政/综合     | 代码：[Apache-2.0](https://github.com/open-compass/LawBench/blob/HEAD/LICENSE)；数据：[遵循原始数据集许可](https://github.com/open-compass/LawBench/blob/HEAD/README_EN.md#licenses) |
-| LexEval        | China / Chinese   | *LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models*                | [GitHub](https://github.com/CSHaitao/LexEval)                                                                | 14,150 questions; 23 tasks                                               | 法律记忆；法律理解；逻辑推理；法律辨别；法律生成；法律伦理 | 民事/刑事/行政/商事综合 | [MIT](https://github.com/CSHaitao/LexEval/blob/HEAD/LICENSE) |
-| LAiW           | China / Chinese   | *LAiW: A Chinese Legal Large Language Models Benchmark*                                                | [GitHub](https://github.com/Dai-shen/LAiW)                                                                   | 11,605 examples; 14 tasks                                                | 基础信息检索；法律原则推理；法律高级应用                   | 民事/刑事/行政综合      | [MIT](https://github.com/Dai-shen/LAiW/blob/HEAD/LICENSE) |
-| UCL-Bench      | China / Chinese   | *UCL-Bench: A Chinese User-Centric Legal Benchmark for Large Language Models*                          | [ACL](https://aclanthology.org/2025.findings-naacl.444/), [GitHub](https://github.com/wittenberg11/UCL-bench) | 230 public examples; 23 tasks                                            | 用户模拟；法律咨询；罪名/法条预测；文书与案件任务          | 民事/刑事/行政综合      | [MIT](https://github.com/wittenberg11/UCL-bench/blob/HEAD/LICENSE) |
-| JuDGE          | China / Chinese   | *JuDGE: Benchmarking Judgment Document Generation for Chinese Legal System*                            | [GitHub](https://github.com/oneal2000/JuDGE), [Paper](https://arxiv.org/abs/2503.14258)                       | 2,505 cases; 452 law articles; 2,505 case-corpus records                 | 裁判文书生成；法律说理；裁判结果预测；类案/法条检索        | 刑事为主                | [MIT](https://github.com/oneal2000/JuDGE/blob/HEAD/LICENSE) |
-| LegalBench-RAG | Foreign / English | *LegalBench-RAG: A Benchmark for Retrieval-Augmented Generation in the Legal Domain*                   | [GitHub](https://github.com/zeroentropy-ai/legalbenchrag), [Paper](https://arxiv.org/abs/2408.10343)          | 6,889 tests; 714 corpus text files; 4 benchmark datasets                 | 检索问答；证据片段定位；基于引用的答案生成                 | 民商事/合同/隐私合规    | 代码：[MIT](https://github.com/zeroentropy-ai/legalbenchrag/blob/HEAD/LICENSE)；数据：[遵循原始数据集使用条款](https://github.com/zeroentropy-ai/legalbenchrag/blob/HEAD/README.md#usage) |
-| LEVEN | China / Chinese | LEVEN: A Large-Scale Chinese Legal Event Detection Dataset | [GitHub](https://github.com/thunlp/LEVEN) | 本地 8,116 份文书：训练 5,301、验证 1,230、测试 1,585；108 类事件 | 法律事件检测；事件触发词识别 | 刑事 | - |
-| LawShift | China / Chinese | LawShift: Benchmarking Legal Judgment Prediction Under Statute Shifts | [Dataset](https://huggingface.co/datasets/triangularPeach/LawShift) | 本地训练 251,883、验证 63,007；31 类法条修改测试目录 | 法条变动下的罪名、法条及刑期预测 | 刑事 | [Apache-2.0](https://huggingface.co/datasets/triangularPeach/LawShift/blob/main/README.md) |
-| MUSER | China / Chinese | MUSER: A Multi-View Similar Case Retrieval Dataset | [GitHub](https://github.com/THUlawtech/MUSER) | 100 个查询；本地案例池 4,024 条；3 类法律要素视角 | 类案检索；法律要素预测 | 民事 | [MIT](https://github.com/THUlawtech/MUSER/blob/HEAD/LICENSE) |
-| LeCaRDv2 | China / Chinese | LeCaRDv2: A Large-Scale Chinese Legal Case Retrieval Dataset | [GitHub](https://github.com/THUIR/LeCaRDv2) | 800 个查询；项目报告 55,192 个候选案例 | 类案检索；相关性排序 | 刑事 | [MIT](https://github.com/THUIR/LeCaRDv2/blob/HEAD/LICENSE) |
-| LexChain | China / Chinese | LexChain: Modeling Legal Reasoning Chains for Chinese Tort Case Analysis | [GitHub](https://github.com/thunlp/LexChain), [Dataset](https://huggingface.co/datasets/TsinghuaNLP/LexChain) | 本地 1,000 对评测输入与参考结果；另附训练文件 | 法律要素识别；责任划分；损害赔偿计算；裁判归纳 | 民事侵权 | - |
-| LexRel | China / Chinese | LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases | [GitHub](https://github.com/thunlp/LexRel) | 训练 R1 19,798、4o 17,706；测试 1,140；106 类法律关系 | 法律关系及主体、客体、权利义务抽取 | 民事 | - |
-| MSLR-Bench | China / Chinese | Benchmarking Multi-Step Legal Reasoning and Analyzing Chain-of-Thought Effects in Large Language Models | [GitHub](https://github.com/yuwenhan07/MSLR-Bench) | 本地 1,389 条输入及对应结构化文件；2 类核心任务 | 结构化信息抽取；案件分析与裁判预测 | 证券；内幕交易；行政及刑事 | [Apache-2.0](https://github.com/yuwenhan07/MSLR-Bench/blob/HEAD/LICENSE) |
-| DISC-LawLLM | China / Chinese | DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services | [GitHub](https://github.com/FudanDISC/DISC-LawLLM), [Dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) | 本地 4 个 SFT 文件，分别为 166,758 / 79,692 / 16,000 / 23,331 条；另含评测集 | 指令微调；法律问答；知识增强；配套法律评测 | 综合 | 代码：[Apache-2.0](https://github.com/FudanDISC/DISC-LawLLM/blob/HEAD/LICENSE)；SFT 数据：[Apache-2.0](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT/blob/main/README.md) |
-| LAW-GPT | China / Chinese | - | [GitHub](https://github.com/LiuHC0428/LAW-GPT) | 本地清洗问答 51,585 条；带法律依据问答 92,373 条 | 法律问答训练；法条支撑回答；检索增强 | 综合 | - |
-| LawInstruct | Multiple jurisdictions / Multilingual | FLawN-T5: An Empirical Examination of Effective Instruction-Tuning Data Mixtures for Legal Reasoning | [GitHub](https://github.com/JoelNiklaus/LawInstruct), [Data setup](https://github.com/JoelNiklaus/LawInstruct#setup)（原始数据入口当前返回 401） | 本地为数据构建代码与指令模板；未核实完整生成数据规模 | 多语言法律指令数据构建；问答、分类、摘要等任务转换 | 多法域；综合 | - |
-
+<table width="1680">
+  <thead>
+    <tr>
+      <th width="180" align="left">Project / Dataset</th>
+      <th width="130" align="left">Region</th>
+      <th width="260" align="left">Paper title</th>
+      <th width="120" align="left">Links</th>
+      <th width="230" align="left">Data size<br>（examples; tasks/files）</th>
+      <th width="300" align="left">任务类型</th>
+      <th width="200" align="left">法律领域</th>
+      <th width="160" align="left">License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <td>PLawBench</td>
+      <td>China /<br> Chinese</td>
+      <td><em>PLawBench: A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice</em></td>
+      <td><a href="https://github.com/SKYLENAGE-AI/PLawbench">GitHub</a></td>
+      <td>280 examples: 250 case analysis, 18 consultation, 6 complaint, 6 defense</td>
+      <td>案例分析；<br>法律咨询；<br>起诉状与答辩状起草</td>
+      <td>民事/家事/劳动/商事为主</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>LegalBench</td>
+      <td>U.S. /<br> English</td>
+      <td><em>LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models</em></td>
+      <td><a href="https://github.com/HazyResearch/legalbench">GitHub</a></td>
+      <td>11,075 parsed examples;<br> 162 tasks</td>
+      <td>合同理解；<br>法律推理；<br>判例、<br>隐私政策与法律规则任务</td>
+      <td>民商事/合规/综合</td>
+      <td><a href="https://github.com/HazyResearch/legalbench/tree/HEAD/tasks">按各子数据集许可</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LawBench</td>
+      <td>China /<br> Chinese</td>
+      <td><em>LawBench: Benchmarking Legal Knowledge of Large Language Models</em></td>
+      <td><a href="https://github.com/open-compass/LawBench">GitHub</a></td>
+      <td>20 tasks;<br> 10,000 examples in zero-shot and 10,000 in one-shot</td>
+      <td>法律知识记忆；<br>法律理解；<br>法律推理；<br>法律应用</td>
+      <td>民事/刑事/行政/综合</td>
+      <td>代码：<a href="https://github.com/open-compass/LawBench/blob/HEAD/LICENSE">Apache-2.0</a>；<br>数据：<a href="https://github.com/open-compass/LawBench/blob/HEAD/README_EN.md#licenses">遵循原始数据集许可</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LexEval</td>
+      <td>China /<br> Chinese</td>
+      <td><em>LexEval: A Comprehensive Chinese Legal Benchmark for Evaluating Large Language Models</em></td>
+      <td><a href="https://github.com/CSHaitao/LexEval">GitHub</a></td>
+      <td>14,150 questions;<br> 23 tasks</td>
+      <td>法律记忆；<br>法律理解；<br>逻辑推理；<br>法律辨别；<br>法律生成；<br>法律伦理</td>
+      <td>民事/刑事/行政/商事综合</td>
+      <td><a href="https://github.com/CSHaitao/LexEval/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LAiW</td>
+      <td>China /<br> Chinese</td>
+      <td><em>LAiW: A Chinese Legal Large Language Models Benchmark</em></td>
+      <td><a href="https://github.com/Dai-shen/LAiW">GitHub</a></td>
+      <td>11,605 examples;<br> 14 tasks</td>
+      <td>基础信息检索；<br>法律原则推理；<br>法律高级应用</td>
+      <td>民事/刑事/行政综合</td>
+      <td><a href="https://github.com/Dai-shen/LAiW/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>UCL-Bench</td>
+      <td>China /<br> Chinese</td>
+      <td><em>UCL-Bench: A Chinese User-Centric Legal Benchmark for Large Language Models</em></td>
+      <td><a href="https://aclanthology.org/2025.findings-naacl.444/">ACL</a>,<br> <a href="https://github.com/wittenberg11/UCL-bench">GitHub</a></td>
+      <td>230 public examples;<br> 23 tasks</td>
+      <td>用户模拟；<br>法律咨询；<br>罪名/法条预测；<br>文书与案件任务</td>
+      <td>民事/刑事/行政综合</td>
+      <td><a href="https://github.com/wittenberg11/UCL-bench/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>JuDGE</td>
+      <td>China /<br> Chinese</td>
+      <td><em>JuDGE: Benchmarking Judgment Document Generation for Chinese Legal System</em></td>
+      <td><a href="https://github.com/oneal2000/JuDGE">GitHub</a>,<br> <a href="https://arxiv.org/abs/2503.14258">Paper</a></td>
+      <td>2,505 cases;<br> 452 law articles;<br> 2,505 case-corpus records</td>
+      <td>裁判文书生成；<br>法律说理；<br>裁判结果预测；<br>类案/法条检索</td>
+      <td>刑事为主</td>
+      <td><a href="https://github.com/oneal2000/JuDGE/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LegalBench-RAG</td>
+      <td>Foreign /<br> English</td>
+      <td><em>LegalBench-RAG: A Benchmark for Retrieval-Augmented Generation in the Legal Domain</em></td>
+      <td><a href="https://github.com/zeroentropy-ai/legalbenchrag">GitHub</a>,<br> <a href="https://arxiv.org/abs/2408.10343">Paper</a></td>
+      <td>6,889 tests;<br> 714 corpus text files;<br> 4 benchmark datasets</td>
+      <td>检索问答；<br>证据片段定位；<br>基于引用的答案生成</td>
+      <td>民商事/合同/隐私合规</td>
+      <td>代码：<a href="https://github.com/zeroentropy-ai/legalbenchrag/blob/HEAD/LICENSE">MIT</a>；<br>数据：<a href="https://github.com/zeroentropy-ai/legalbenchrag/blob/HEAD/README.md#usage">遵循原始数据集使用条款</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LEVEN</td>
+      <td>China /<br> Chinese</td>
+      <td>LEVEN: A Large-Scale Chinese Legal Event Detection Dataset</td>
+      <td><a href="https://github.com/thunlp/LEVEN">GitHub</a></td>
+      <td>本地 8,116 份文书：训练 5,301、验证 1,230、测试 1,585；<br>108 类事件</td>
+      <td>法律事件检测；<br>事件触发词识别</td>
+      <td>刑事</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>LawShift</td>
+      <td>China /<br> Chinese</td>
+      <td>LawShift: Benchmarking Legal Judgment Prediction Under Statute Shifts</td>
+      <td><a href="https://huggingface.co/datasets/triangularPeach/LawShift">Dataset</a></td>
+      <td>本地训练 251,883、验证 63,007；<br>31 类法条修改测试目录</td>
+      <td>法条变动下的罪名、<br>法条及刑期预测</td>
+      <td>刑事</td>
+      <td><a href="https://huggingface.co/datasets/triangularPeach/LawShift/blob/main/README.md">Apache-2.0</a></td>
+    </tr>
+    <tr valign="top">
+      <td>MUSER</td>
+      <td>China /<br> Chinese</td>
+      <td>MUSER: A Multi-View Similar Case Retrieval Dataset</td>
+      <td><a href="https://github.com/THUlawtech/MUSER">GitHub</a></td>
+      <td>100 个查询；<br>本地案例池 4,024 条；<br>3 类法律要素视角</td>
+      <td>类案检索；<br>法律要素预测</td>
+      <td>民事</td>
+      <td><a href="https://github.com/THUlawtech/MUSER/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LeCaRDv2</td>
+      <td>China /<br> Chinese</td>
+      <td>LeCaRDv2: A Large-Scale Chinese Legal Case Retrieval Dataset</td>
+      <td><a href="https://github.com/THUIR/LeCaRDv2">GitHub</a></td>
+      <td>800 个查询；<br>项目报告 55,192 个候选案例</td>
+      <td>类案检索；<br>相关性排序</td>
+      <td>刑事</td>
+      <td><a href="https://github.com/THUIR/LeCaRDv2/blob/HEAD/LICENSE">MIT</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LexChain</td>
+      <td>China /<br> Chinese</td>
+      <td>LexChain: Modeling Legal Reasoning Chains for Chinese Tort Case Analysis</td>
+      <td><a href="https://github.com/thunlp/LexChain">GitHub</a>,<br> <a href="https://huggingface.co/datasets/TsinghuaNLP/LexChain">Dataset</a></td>
+      <td>本地 1,000 对评测输入与参考结果；<br>另附训练文件</td>
+      <td>法律要素识别；<br>责任划分；<br>损害赔偿计算；<br>裁判归纳</td>
+      <td>民事侵权</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>LexRel</td>
+      <td>China /<br> Chinese</td>
+      <td>LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases</td>
+      <td><a href="https://github.com/thunlp/LexRel">GitHub</a></td>
+      <td>训练 R1 19,798、4o 17,706；<br>测试 1,140；<br>106 类法律关系</td>
+      <td>法律关系及主体、<br>客体、<br>权利义务抽取</td>
+      <td>民事</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>MSLR-Bench</td>
+      <td>China /<br> Chinese</td>
+      <td>Benchmarking Multi-Step Legal Reasoning and Analyzing Chain-of-Thought Effects in Large Language Models</td>
+      <td><a href="https://github.com/yuwenhan07/MSLR-Bench">GitHub</a></td>
+      <td>本地 1,389 条输入及对应结构化文件；<br>2 类核心任务</td>
+      <td>结构化信息抽取；<br>案件分析与裁判预测</td>
+      <td>证券；<br>内幕交易；<br>行政及刑事</td>
+      <td><a href="https://github.com/yuwenhan07/MSLR-Bench/blob/HEAD/LICENSE">Apache-2.0</a></td>
+    </tr>
+    <tr valign="top">
+      <td>DISC-LawLLM</td>
+      <td>China /<br> Chinese</td>
+      <td>DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services</td>
+      <td><a href="https://github.com/FudanDISC/DISC-LawLLM">GitHub</a>,<br> <a href="https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT">Dataset</a></td>
+      <td>本地 4 个 SFT 文件，分别为 166,758 / 79,692 / 16,000 / 23,331 条；<br>另含评测集</td>
+      <td>指令微调；<br>法律问答；<br>知识增强；<br>配套法律评测</td>
+      <td>综合</td>
+      <td>代码：<a href="https://github.com/FudanDISC/DISC-LawLLM/blob/HEAD/LICENSE">Apache-2.0</a>；<br>SFT 数据：<a href="https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT/blob/main/README.md">Apache-2.0</a></td>
+    </tr>
+    <tr valign="top">
+      <td>LAW-GPT</td>
+      <td>China /<br> Chinese</td>
+      <td>-</td>
+      <td><a href="https://github.com/LiuHC0428/LAW-GPT">GitHub</a></td>
+      <td>本地清洗问答 51,585 条；<br>带法律依据问答 92,373 条</td>
+      <td>法律问答训练；<br>法条支撑回答；<br>检索增强</td>
+      <td>综合</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>LawInstruct</td>
+      <td>Multiple jurisdictions /<br> Multilingual</td>
+      <td>FLawN-T5: An Empirical Examination of Effective Instruction-Tuning Data Mixtures for Legal Reasoning</td>
+      <td><a href="https://github.com/JoelNiklaus/LawInstruct">GitHub</a>,<br> <a href="https://github.com/JoelNiklaus/LawInstruct#setup">Data setup</a>（原始数据入口当前返回 401）</td>
+      <td>本地为数据构建代码与指令模板；<br>未核实完整生成数据规模</td>
+      <td>多语言法律指令数据构建；<br>问答、<br>分类、<br>摘要等任务转换</td>
+      <td>多法域；<br>综合</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
 
 ### PLawBench
 
@@ -720,7 +974,6 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 </table>
 
 - **主要贡献**：围绕基础信息检索、法律原则推理和法律高级应用三个层级，整合 14 类中文法律任务，构建法律能力评测数据集 LED。
-
 
 ### UCL-Bench
 
@@ -1277,10 +1530,36 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 
 ## Legal Resources & Skills
 
-| Project | Region | Links | 资源类型 | 主要内容 | License |
-| --- | --- | --- | --- | --- | --- |
-| Laws | China / Chinese | [GitHub](https://github.com/LawRefBook/Laws) | 法律知识语料与处理脚本 | 法律法规、部门规章、司法解释、案例及章节处理 | - |
-| Legal-Skills-Chinese | China / Chinese | [GitHub](https://github.com/THUYRan/Legal-Skills-Chinese) | Agent Skills | 法律检索、事实处理、解释、推理、论证、风险评估及文书管理 | [CC BY-NC-ND 4.0](https://github.com/THUYRan/Legal-Skills-Chinese/blob/HEAD/README.md) |
+<table width="1180">
+  <thead>
+    <tr>
+      <th width="200" align="left">Project</th>
+      <th width="130" align="left">Region</th>
+      <th width="120" align="left">Links</th>
+      <th width="200" align="left">资源类型</th>
+      <th width="350" align="left">主要内容</th>
+      <th width="180" align="left">License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr valign="top">
+      <td>Laws</td>
+      <td>China /<br> Chinese</td>
+      <td><a href="https://github.com/LawRefBook/Laws">GitHub</a></td>
+      <td>法律知识语料与处理脚本</td>
+      <td>法律法规、<br>部门规章、<br>司法解释、<br>案例及章节处理</td>
+      <td>-</td>
+    </tr>
+    <tr valign="top">
+      <td>Legal-Skills-Chinese</td>
+      <td>China /<br> Chinese</td>
+      <td><a href="https://github.com/THUYRan/Legal-Skills-Chinese">GitHub</a></td>
+      <td>Agent Skills</td>
+      <td>法律检索、<br>事实处理、<br>解释、<br>推理、<br>论证、<br>风险评估及文书管理</td>
+      <td><a href="https://github.com/THUYRan/Legal-Skills-Chinese/blob/HEAD/README.md">CC BY-NC-ND 4.0</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Laws
 
@@ -1345,7 +1624,6 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 
 - **主要贡献**：提供 38 个由法律专业人员编写和验证的中文法律技能，覆盖检索、事实处理、解释、推理、论证、风险评估及文书事务。
 
-
 ## General Observations
 
 - 现有 legal agent benchmark 正从静态问答转向咨询、文书起草、庭审模拟、类案检索和裁判生成等流程性任务，但不少工作仍主要评估最终输出，尚未完整覆盖 agent 的多轮决策、状态更新和工具使用过程。
@@ -1354,3 +1632,9 @@ License 列依据项目许可证文件及 README 声明填写；`-` 表示未找
 - 中文legal agent benchmark的Harness 设计不成熟。许多 benchmark 提供了任务数据、prompt、rubric 或评价脚本，但缺少统一定义的可观察状态、工具接口、角色交互协议、过程日志、失败条件和分数聚合机制，因此可复现性和跨模型公平比较仍受限制。或许可参考 [τ-Bench 论文](https://arxiv.org/abs/2406.12045) 中的 `pass^k` 可靠性指标？在同一任务和相同初始状态下重复运行 agent，并统计多次尝试全部成功的任务比例，从而补充单次准确率无法反映的稳定性和可复现性。
 - 真正贴近法律工作的 agent benchmark 应覆盖事实调查、证据管理、客户沟通、诉讼策略、期限管理、文书迭代、检索引用、伦理边界和可追溯解释，而不仅是最终答案质量。
 - 注：Reference 中的法律评测虽然不是严格 agent benchmark，但可作为 agent 能力模块的来源：LegalBench、LawBench、LexEval 和 LAiW 补基础法律知识与推理，JuDGE 补裁判文书生成和法条/类案检索，LegalBench-RAG 补证据定位和 grounded answer。
+
+## License
+
+本仓库原创文档与原创整理内容采用 [Creative Commons Attribution 4.0 International（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/)，完整条款见 [LICENSE](LICENSE)。转载或改编时，请注明 Legal AI Data 及相关已署名贡献者、提供来源与许可证链接，并注明修改。
+
+本许可证不适用于第三方子模块、源代码、数据集、图片、引用材料及其他第三方内容，包括嵌入本仓库文档中的第三方材料。这些内容仍遵循各自的许可证与权利声明；收录或链接不构成重新授权。上游未明确许可的内容，也不会因被本仓库收录而自动获得 CC BY 4.0 授权。
