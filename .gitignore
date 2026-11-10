@@ -3,4 +3,10 @@
 __pycache__/
 **/__pycache__/
 *.pyc
-existing_legal_agent_benchmark/chinese/Legal-world/dataset/Full_version_raw.json
+legal_agent_benchmarks/Legal-world/dataset/Full_version_raw.json
+
+# Local-only data, notes, and download helper
+/lexissue/
+/lexverse_rawdata/
+/论文分享/
+/reference/hf-download.py

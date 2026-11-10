@@ -1,0 +1,81 @@
+[submodule "legal_agent_benchmarks/DLawBench"]
+	path = legal_agent_benchmarks/DLawBench
+	url = https://github.com/SKYLENAGE-AI/DLawBench.git
+[submodule "reference/JuDGE"]
+	path = reference/JuDGE
+	url = https://github.com/oneal2000/JuDGE.git
+[submodule "reference/LawBench"]
+	path = reference/LawBench
+	url = https://github.com/open-compass/LawBench.git
+[submodule "reference/LawInstruct"]
+	path = reference/LawInstruct
+	url = https://github.com/JoelNiklaus/LawInstruct.git
+[submodule "reference/LexEval"]
+	path = reference/LexEval
+	url = https://github.com/CSHaitao/LexEval.git
+[submodule "reference/PLawBench"]
+	path = reference/PLawBench
+	url = https://github.com/SKYLENAGE-AI/PLawbench.git
+[submodule "reference/UCL-bench"]
+	path = reference/UCL-bench
+	url = https://github.com/wittenberg11/UCL-bench.git
+[submodule "reference/legalbench"]
+	path = reference/legalbench
+	url = https://github.com/HazyResearch/legalbench.git
+[submodule "reference/LAiW"]
+	path = reference/LAiW
+	url = https://github.com/Dai-shen/LAiW.git
+[submodule "legal_agent_benchmarks/harvey-labs"]
+	path = legal_agent_benchmarks/harvey-labs
+	url = https://github.com/harveyai/harvey-labs.git
+[submodule "reference/LexRel"]
+	path = reference/LexRel
+	url = https://github.com/thunlp/LexRel.git
+[submodule "reference/MSLR-Bench"]
+	path = reference/MSLR-Bench
+	url = https://github.com/yuwenhan07/MSLR-Bench.git
+[submodule "reference/LawShift"]
+	path = reference/LawShift
+	url = https://huggingface.co/datasets/triangularPeach/LawShift
+[submodule "legal_resources/Legal-Skills-Chinese"]
+	path = legal_resources/Legal-Skills-Chinese
+	url = https://github.com/THUYRan/Legal-Skills-Chinese.git
+[submodule "legal_agent_benchmarks/AgentsCourt"]
+	path = legal_agent_benchmarks/AgentsCourt
+	url = https://github.com/Hezhitao2021/SimuCourt.git
+[submodule "legal_agent_benchmarks/MASER"]
+	path = legal_agent_benchmarks/MASER
+	url = https://github.com/FudanDISC/MASER.git
+[submodule "reference/DISC-LawLLM"]
+	path = reference/DISC-LawLLM
+	url = https://github.com/FudanDISC/DISC-LawLLM.git
+[submodule "reference/LAW-GPT"]
+	path = reference/LAW-GPT
+	url = https://github.com/LiuHC0428/LAW-GPT.git
+[submodule "reference/LEVEN"]
+	path = reference/LEVEN
+	url = https://github.com/thunlp/LEVEN.git
+[submodule "reference/LeCaRDv2"]
+	path = reference/LeCaRDv2
+	url = https://github.com/THUIR/LeCaRDv2.git
+[submodule "reference/MUSER"]
+	path = reference/MUSER
+	url = https://github.com/THUlawtech/MUSER.git
+[submodule "reference/legalbenchrag"]
+	path = reference/legalbenchrag
+	url = https://github.com/zeroentropy-ai/legalbenchrag.git
+[submodule "legal_agent_benchmarks/J1Bench"]
+	path = legal_agent_benchmarks/J1Bench
+	url = https://github.com/FudanDISC/J1Bench.git
+[submodule "legal_agent_benchmarks/Legal-world"]
+	path = legal_agent_benchmarks/Legal-world
+	url = https://github.com/chidaic/Legal-world.git
+[submodule "legal_agent_benchmarks/LegalAgentBench"]
+	path = legal_agent_benchmarks/LegalAgentBench
+	url = https://github.com/CSHaitao/LegalAgentBench.git
+[submodule "reference/LexChain"]
+	path = reference/LexChain
+	url = https://github.com/thunlp/LexChain.git
+[submodule "legal_resources/Laws"]
+	path = legal_resources/Laws
+	url = https://github.com/LawRefBook/Laws.git
